@@ -5,6 +5,10 @@ var jayson = require('jayson');
 var client = jayson.client.http('http://147.46.240.248:40001');
 
 for(var i = 0; i < 10; i++){
+   request_eth_sendTX(client)
+}
+
+function request_eth_sendTX(client){
     client.request('eth_sendTransaction', [{
         "from": "0xb60e8dd61c5d32be8058bb8eb970870f07233155",
         "to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567",
@@ -26,7 +30,6 @@ for(var i = 0; i < 10; i++){
         }
     )
 }
-
 
 //curl -X POST --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{see above}],"id":1}'
 
